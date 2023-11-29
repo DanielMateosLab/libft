@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:27:01 by damateos          #+#    #+#             */
-/*   Updated: 2023/09/16 17:59:13 by damateos         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:23:35 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*memset(void *b, int c, size_t len)
 	unsigned char	*p;
 
 	p = (unsigned char *)b;
-	while (len && *p)
+	while (len)
 	{
 		*p = c;
 		len--;
