@@ -21,3 +21,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+deb:
+	$(CC) $(CFLAGS) -g3 -fsanitize=address main.c $(NAME) -o test
