@@ -23,4 +23,4 @@ fclean: clean
 re: fclean all
 
 deb:
-	$(CC) $(CFLAGS) -g3 -fsanitize=address main.c $(NAME) -o test
+	$(CC) $(CFLAGS) -g3 -fsanitize=address main.c $(SRCS) -o test
