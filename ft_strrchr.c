@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 22:16:26 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/15 22:34:09 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:43:27 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ char	*ft_strrchr(const char *s, int c)
 	last = 0;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			last = (char *)s;
 		s++;
 	}
-	if (c == '\0')
+	if (*s == (char)c)
 		return ((char *)s);
 	return (last);
 }

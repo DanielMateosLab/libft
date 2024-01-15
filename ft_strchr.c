@@ -6,15 +6,15 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 22:05:10 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/15 22:13:14 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:41:46 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s && *s != c)
+	while (*s && *s != (char)c)
 		s++;
-	if (*s == c)
+	if (*s == (char)c)
 		return ((char *)s);
 	return (0);
 }
