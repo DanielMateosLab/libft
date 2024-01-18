@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:09:15 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/17 23:33:56 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/18 20:11:01 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ char	*ft_strdup(const char *s1)
 		errno = ENOMEM;
 		return (NULL);
 	}
-	s2[len] = '\0';
 	while (len)
 	{
 		s2[len] = (char)s1[len];
 		len--;
 	}
+	s2[len] = (char)s1[len];
 	return (s2);
-	// TODO: debug with lldb
 }
