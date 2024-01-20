@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 23:34:12 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/18 23:47:30 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:24:23 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ft_strlcpy(s3, s1, len + 1);
 	if (s2)
 		ft_strlcat(s3, s2, len + 1);
-	s3[len] = '\0';
 	return (s3);
 }
 
