@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:32:50 by damateos          #+#    #+#             */
-/*   Updated: 2023/12/02 18:54:39 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:48:11 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char	*dst_u;
+	unsigned char	*src_u;
 
-	i = 0;
-	if (dst == 0 && src == 0)
+	if (!dst && !src)
 		return (dst);
-	while (i < n)
-	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
-	}
+	dst_u = (unsigned char *)dst;
+	src_u = (unsigned char *)src;
+	while (n-- > 0)
+		dst_u[n] = src_u[n];
 	return (dst);
 }
