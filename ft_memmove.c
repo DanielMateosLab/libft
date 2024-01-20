@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 20:10:55 by damateos          #+#    #+#             */
-/*   Updated: 2023/12/05 23:30:02 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/20 18:59:57 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
+	unsigned char	*dst_u;
+	unsigned char	*src_u;
+	size_t				i;
+
 	if ((!dst && !src) || !len || dst == src)
 		return (dst);
-	if (dst < src)
+	if (dst > src)
 		return (ft_memcpy(dst, src, len));
-	while (len--)
-		((char *)dst)[len] = ((char *)src)[len];
+	dst_u = (unsigned char *)dst;
+	src_u = (unsigned char *)src;
+	i = 0;
+	while (i < len)
+	{
+		dst_u[i] = src_u[i];
+		i++;
+	}
 	return (dst);
 }
