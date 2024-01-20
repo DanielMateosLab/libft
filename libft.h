@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/18 23:51:31 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:39:25 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-// for strtrim: reuse function to find char in set. Just know where to start and where to stop, and reuse a function for that too.
-// it would be nice to reweite substr using already created functions
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif

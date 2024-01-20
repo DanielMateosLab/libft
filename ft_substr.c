@@ -6,12 +6,13 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 22:25:26 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/20 17:56:58 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:37:31 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// dest_len does not include the '\0'
 char	*ft_substr(char const *s, unsigned int start, size_t dest_len)
 {
 	char	*sub;
