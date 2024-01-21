@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 09:44:51 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/21 11:52:17 by damateos         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:56:18 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,10 @@ static size_t	count_words(char const *s, char c)
 
 static char	**clean_arr(char **arr, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len)
+	while (len--)
 	{
-		free(arr[i]);
-		arr[i] = NULL;
-		i++;
+		free(arr[len]);
+		arr[len] = NULL;
 	}
 	free(arr);
 	arr = NULL;
