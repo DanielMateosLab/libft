@@ -14,8 +14,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(NAME) $(BONUS_OBJS)
+	ar -rcs $(NAME) $(BONUS_OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -27,6 +27,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-deb:
-	$(CC) $(CFLAGS) -g3 -fsanitize=address main.c $(SRCS) $(BONUS_OBJS) -o test
