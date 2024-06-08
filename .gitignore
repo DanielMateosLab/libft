@@ -4,3 +4,5 @@ a.*
 test*
 *.swp
 .editorconfig
+*.o
+*.a
