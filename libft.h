@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/06/08 19:27:03 by damateos         ###   ########.fr       */
+/*   Updated: 2024/06/08 19:48:03 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,19 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(
 					t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+typedef struct s_hnode
+{
+	char				*key;
+	void				*value;
+	struct s_hnode		*next;
+}	t_hnode;
+
+typedef struct s_hashmap
+{
+	t_hnode	**array;
+	size_t	size;
+}	t_hashmap;
 
 unsigned int	ft_hash(const char *string);
 
