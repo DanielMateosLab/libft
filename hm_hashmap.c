@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 18:04:00 by damateos          #+#    #+#             */
-/*   Updated: 2024/06/08 19:27:06 by damateos         ###   ########.fr       */
+/*   Updated: 2024/06/09 10:16:17 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Typical max size of unsigned int: 2^32 4.294.967.295 or 4mb
 // Algo of my namesake djb2 (Daniel J. Bernstein)
 
-unsigned int	ft_hash(const char *string)
+unsigned int	hm_hash(const char *string)
 {
 	const unsigned char	*u_str;
 	unsigned int		hash;
