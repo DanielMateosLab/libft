@@ -63,7 +63,7 @@ void	ft_hm_node_remove(t_hashmap *hm, const char *key)
 	ft_free((void **)curr);
 }
 
-t_hm_node	*ft_hm_get(t_hashmap *hm, const char *key)
+void	*ft_hm_get(t_hashmap *hm, const char *key)
 {
 	unsigned int	i;
 	size_t			key_len;
@@ -75,6 +75,6 @@ t_hm_node	*ft_hm_get(t_hashmap *hm, const char *key)
 	while (node && ft_strncmp(key, node->key, key_len + 1) != 0 && node->next)
 		node = node->next;
 	if (node && ft_strncmp(key, node->key, key_len + 1) == 0)
-		return (node);
+		return (node->value);
 	return (NULL);
 }

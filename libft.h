@@ -93,7 +93,7 @@ t_hm_node		*ft_hm_node_insert(
 					void *value,
 					size_t value_size);
 void			ft_hm_node_remove(t_hashmap *hm, const char *key);
-t_hm_node		*ft_hm_get(t_hashmap *hm, const char *key);
+void			*ft_hm_get(t_hashmap *hm, const char *key);
 void			ft_hm_remove(t_hashmap *hm);
 
 #endif
