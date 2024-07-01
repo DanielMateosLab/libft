@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/06/29 20:24:12 by damateos         ###   ########.fr       */
+/*   Updated: 2024/07/01 21:30:36 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,10 @@ typedef struct s_hashmap
 {
 	t_hm_node	**array;
 	size_t		size;
-	void		(*del)(void *);
 }	t_hashmap;
 
 unsigned int	ft_hash(const char *string);
-t_hashmap		*ft_hm_create(size_t size, void (*del)(void *));
+t_hashmap		*ft_hm_create(size_t size);
 t_hm_node		*ft_hm_node_insert(
 					t_hashmap *map,
 					const char *key,

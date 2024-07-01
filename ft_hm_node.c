@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 17:50:09 by damateos          #+#    #+#             */
-/*   Updated: 2024/06/29 20:24:32 by damateos         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:10:21 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ void	ft_hm_node_remove(t_hashmap *hm, const char *key)
 	else
 		hm->array[i] = curr->next;
 	ft_free((void **)curr->key);
-	if (hm->del)
-		hm->del(curr->value);
 	ft_free((void **)curr->value);
 	ft_free((void **)curr);
 }
@@ -74,9 +72,9 @@ t_hm_node	*ft_hm_get(t_hashmap *hm, const char *key)
 	key_len = ft_strlen(key);
 	i = ft_hash(key) % hm->size;
 	node = hm->array[i];
-	while (node && ft_strncmp(key, node->key, key_len) != 0 && node->next)
+	while (node && ft_strncmp(key, node->key, key_len + 1) != 0 && node->next)
 		node = node->next;
-	if (ft_strncmp(key, node->key, key_len) == 0)
+	if (node && ft_strncmp(key, node->key, key_len + 1) == 0)
 		return (node);
 	return (NULL);
 }

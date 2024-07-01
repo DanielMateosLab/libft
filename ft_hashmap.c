@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 18:04:00 by damateos          #+#    #+#             */
-/*   Updated: 2024/06/29 20:23:22 by damateos         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:18:50 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@ unsigned int	ft_hash(const char *string)
 	return (hash);
 }
 
-t_hashmap	*ft_hm_create(size_t size, void (*del)(void *))
+t_hashmap	*ft_hm_create(size_t size)
 {
 	t_hashmap	*hm;
 
 	hm = (t_hashmap *)malloc(sizeof(t_hashmap));
 	if (!hm)
 		return (NULL);
-	hm->array = ft_calloc(size, 1);
+	hm->array = ft_calloc(size, sizeof(void *));
 	if (!hm->array)
 		return (ft_free((void **)hm));
 	hm->size = size;
-	hm->del = del;
 	return (hm);
 }
 
@@ -54,16 +53,14 @@ void	ft_hm_remove(t_hashmap *hm)
 		node = hm->array[i];
 		while (node)
 		{
-			temp = node->next;
+			temp = node;
 			node = temp->next;
-			ft_free((void **)temp->key);
-			if (hm->del)
-				hm->del(temp->value);
-			ft_free((void **)temp->value);
-			ft_free((void **)temp);
+			ft_free((void **)&temp->key);
+			ft_free((void **)&temp->value);
+			ft_free((void **)&temp);
 		}
 		i++;
 	}
-	ft_free((void **)hm->array);
-	ft_free((void **)hm);
+	ft_free((void **)&hm->array);
+	ft_free((void **)&hm);
 }
