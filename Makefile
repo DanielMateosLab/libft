@@ -14,10 +14,10 @@ OBJS = $(SRCS:.c=.o)
 BONUS_SRCS = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-all: $(NAME)
+all: printf $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	ar -rcs $(NAME) $(OBJS) printf/libftprintf.a
 
 bonus: $(NAME) $(BONUS_OBJS)
 	ar -rcs $(NAME) $(BONUS_OBJS)
@@ -25,11 +25,16 @@ bonus: $(NAME) $(BONUS_OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+printf:
+	make -C printf
+
 clean:
+	make -C printf clean
 	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
+	make -C printf fclean
 
 re: fclean all
 
@@ -38,3 +43,5 @@ deb: fclean
 
 leaks: fclean
 	$(CC) $(CFLAGS) -g main.c $(NAME) -o test
+
+.PHONY: all bonus printf clean fclean re test
