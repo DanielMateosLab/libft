@@ -44,9 +44,9 @@ fclean: clean
 re: fclean all
 
 deb: fclean
-	$(CC) $(CFLAGS) -g -fsanitize=address main.c $(NAME) -o test
+	$(CC) $(CFLAGS) -g -fsanitize=address main.c $(NAME) -o out
 
 leaks: fclean
-	$(CC) $(CFLAGS) -g main.c $(NAME) -o test
+	$(CC) $(CFLAGS) -g main.c $(NAME) -o out
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
