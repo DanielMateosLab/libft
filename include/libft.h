@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/07/27 14:59:51 by damateos         ###   ########.fr       */
+/*   Updated: 2024/08/16 18:14:26 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,19 @@ void			ft_hm_remove(t_hashmap *hm);
  */
 char			*get_next_line(int fd);
 int				ft_char_any_of(char target, int num_args, ...);
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
+
+void			*str_array_clear(char **table);
+char			**str_array_copy(char **map);
+char			**str_array_resize(char **arr, size_t len, size_t new_len);
+size_t			str_array_len(char **arr);
+void			str_array_loop_char(char **arr,
+					void (*fn)(char **arr, t_point pos, int *stop, void *param),
+					void *param);
 
 #endif
