@@ -63,9 +63,6 @@ foreach(file ${tests})
 		"${PROJECT_SOURCE_DIR}/main.cpp")
 	target_link_libraries(
 		"${name}_tests" gtest_main
-  		${LIBFT_DIR}/libft.a
-		${MLX_BUILD_DIR}/libmlx42.a
-		glfw
 	)
 	add_test(NAME ${name} COMMAND "${name}_tests")
 	add_leak_test(${name} "${name}_tests")
