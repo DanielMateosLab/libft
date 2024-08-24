@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 22:15:33 by damateos          #+#    #+#             */
-/*   Updated: 2024/01/17 22:31:59 by damateos         ###   ########.fr       */
+/*   Updated: 2024/08/24 11:38:11 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static int	is_space(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	int	sign;
-	int	res;
+	long	sign;
+	long	res;
 
 	sign = 1;
 	res = 0;
@@ -36,4 +36,9 @@ int	ft_atoi(const char *str)
 	while (*str && ft_isdigit(*str))
 		res = res * 10 + (*str++ - '0');
 	return (res * sign);
+}
+
+int	ft_atoi(const char *str)
+{
+	return (ft_atol(str));
 }
