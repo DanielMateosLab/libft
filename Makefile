@@ -2,6 +2,7 @@ CC = gcc
 
 NAME = libft.a
 BUILD_DIR = build
+TEST_OUT = test/build
 
 GET_NEXT_LINE_SRCS = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
@@ -20,11 +21,23 @@ src/ft_memset.c src/ft_putchar_fd.c src/ft_putendl_fd.c src/ft_putnbr_fd.c src/f
 src/ft_split.c src/ft_strchr.c src/ft_strdup.c src/ft_striteri.c src/ft_strjoin.c src/ft_strlcat.c \
 src/ft_strlcpy.c src/ft_strlen.c src/ft_strmapi.c src/ft_strncmp.c \
 src/ft_strnstr.c src/ft_strrchr.c src/ft_strtrim.c src/ft_substr.c src/ft_tolower.c src/ft_toupper.c \
-src/ft_hashmap.c src/ft_hm_node.c src/ft_free.c src/ft_char_any_of.c
+src/ft_hashmap.c src/ft_hm_node.c src/ft_free.c src/ft_char_any_of.c \
+src/ft_str_arr.c src/ft_str_arr2.c
 
 OBJS = $(SRCS:%.c=$(BUILD_DIR)/%.o)
 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
+
+# Set process number depending if it's mac or linux OS, rest default to 1
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	PROCS := $(shell nproc)
+else ifeq ($(UNAME_S),Darwin)
+	PROCS := $(shell sysctl -n hw.ncpu)
+else
+	PROCS := 1
+endif
+MAKEFLAGS += j$(PROCS)
 
 all: $(NAME)
 
@@ -49,4 +62,10 @@ deb: fclean
 leaks: fclean
 	$(CC) $(CFLAGS) -g main.c $(NAME) -o out
 
-.PHONY: all clean fclean re
+test:
+	mkdir -p $(TEST_OUT)
+	cd $(TEST_OUT) && cmake ..
+	+make -C $(TEST_OUT)
+	cd $(TEST_OUT) && ctest
+
+.PHONY: all clean fclean re test

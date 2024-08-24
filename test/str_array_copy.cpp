@@ -8,7 +8,7 @@ extern "C" {
 }
 
 class StrArrayCopyTest : public ::testing::TestWithParam<std::vector<std::string>> {
-protected:
+	protected:
     std::vector<char*> input_array;
     std::vector<char*> result_array;
 

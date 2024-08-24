@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/08/16 18:14:26 by damateos         ###   ########.fr       */
+/*   Updated: 2024/08/24 20:19:13 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,5 +125,6 @@ size_t			str_array_len(char **arr);
 void			str_array_loop_char(char **arr,
 					void (*fn)(char **arr, t_point pos, int *stop, void *param),
 					void *param);
+char			**str_array_copy_n(char **arr, size_t n);
 
 #endif
