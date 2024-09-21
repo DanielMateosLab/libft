@@ -48,3 +48,15 @@ INSTANTIATE_TEST_SUITE_P(
         std::vector<int>{10, 9, 8, 7, 6, 5, 4, 3, 2, 1} // Reverse sorted
     )
 );
+
+TEST(QuickSortTest, ReverseOrder) {
+    std::vector<int> input_array = {1, 2, 3, 4, 5};
+    std::vector<int> expected_sorted = {5, 4, 3, 2, 1};
+
+    ft_reverse_order(input_array.data(), 0, static_cast<int>(input_array.size()) - 1);
+
+    ASSERT_EQ(input_array.size(), expected_sorted.size());
+    for (size_t i = 0; i < input_array.size(); ++i) {
+        EXPECT_EQ(input_array[i], expected_sorted[i]);
+    }
+}

@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 14:37:03 by damateos          #+#    #+#             */
-/*   Updated: 2024/09/21 15:19:05 by damateos         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:28:54 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,23 @@ void	ft_quick_sort(int *arr, int low, int high)
 		pi = partition(arr, low, high);
 		ft_quick_sort(arr, low, pi - 1);
 		ft_quick_sort(arr, pi + 1, high);
+	}
+}
+
+void	ft_reverse_order(int *arr, int low, int high)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = low;
+	j = high;
+	while (i < j)
+	{
+		temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+		i++;
+		j--;
 	}
 }
