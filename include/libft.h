@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/08/24 20:19:13 by damateos         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:17:24 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,6 @@ void			str_array_loop_char(char **arr,
 					void (*fn)(char **arr, t_point pos, int *stop, void *param),
 					void *param);
 char			**str_array_copy_n(char **arr, size_t n);
+void			ft_quick_sort(int *arr, int low, int high);
 
 #endif

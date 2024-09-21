@@ -22,7 +22,7 @@ src/ft_split.c src/ft_strchr.c src/ft_strdup.c src/ft_striteri.c src/ft_strjoin.
 src/ft_strlcpy.c src/ft_strlen.c src/ft_strmapi.c src/ft_strncmp.c \
 src/ft_strnstr.c src/ft_strrchr.c src/ft_strtrim.c src/ft_substr.c src/ft_tolower.c src/ft_toupper.c \
 src/ft_hashmap.c src/ft_hm_node.c src/ft_free.c src/ft_char_any_of.c \
-src/ft_str_arr.c src/ft_str_arr2.c
+src/ft_str_arr.c src/ft_str_arr2.c src/ft_quick_sort.c
 
 OBJS = $(SRCS:%.c=$(BUILD_DIR)/%.o)
 
