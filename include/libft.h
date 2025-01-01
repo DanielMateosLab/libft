@@ -6,7 +6,7 @@
 /*   By: damateos <damateos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 20:08:06 by damateos          #+#    #+#             */
-/*   Updated: 2024/12/30 18:31:08 by damateos         ###   ########.fr       */
+/*   Updated: 2025/01/01 22:20:08 by damateos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,6 @@ void			ft_reverse_order(int *arr, int low, int high);
 int				*ft_int_arr_copy(int *arr, size_t len);
 void			ft_int_arr_print(int *arr, size_t len);
 void			ft_int_arr_reverse(int *arr, size_t len);
+char			*ft_strjoin_mut(char **s1, char *s2);
 
 #endif
